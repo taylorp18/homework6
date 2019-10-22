@@ -20,6 +20,7 @@
 	padding-top: 10px;
 	box-sizing: border-box;
 }
+/* I got some pointers for this block of code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_text */
 .info{
   position: absolute;
   top: 50%;
