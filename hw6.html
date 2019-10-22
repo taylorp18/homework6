@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<link rel="stylesheet" type="text/css" href="hw6.css">
+<head>
+<meta charset="UTF-8">
+<title>HW 6</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+<script language="javascript" type="text/javascript">
+	
+	var piece1 = new Gallery;
+		piece1.name = "Unemployed";
+		piece1.price = "$10,000";
+		piece1.img_path = "img1.jpg";
+	var piece2 = new Gallery;
+		piece2.name = "City Watchers";
+		piece2.price = "$10,009";
+		piece2.img_path = "img2.jpg";
+	var piece3 = new Gallery;
+	    piece3.name = "In Paris";
+		piece3.price = "$10,019";
+		piece3.img_path = "img3.jpg";
+	var piece4 = new Gallery;
+		piece4.name = "Boys Laughing";
+		piece4.price = "$10,089";
+		piece4.img_path = "img4.jpg";
+	var piece5 = new Gallery;
+		piece5.name = "Queens";
+		piece5.price = "$10,189";
+		piece5.img_path = "img5.jpg";
+	//make array
+	var full_gallery = [piece1, piece2, piece3, piece4, piece5];
+	//Gallery object
+	function Gallery (name, price, img){
+		self.name = name;
+		self.price = price;
+		self.img_path = img;
+	}
+	
+	$(document).ready(function(){
+		for(i = 0; i < full_gallery.length; i++){
+			$(".thumbnails").append("<img class=\"small\" id=\"" + "thumb" + i + "\" src=" + full_gallery[i].img_path +
+									" alt=" + full_gallery[i].name + ">");
+		}
+		//THE ON HOVER STUFF
+		curr_large = full_gallery[0].img_path;
+		$(".lightbox").append("<img class=\"large\" src=" + curr_large + ">");
+		
+		$("#thumb0").hover(function(){
+			$(".large").fadeOut("fast", function(){
+				$(".large").attr("src", full_gallery[0].img_path);
+				$(".large").fadeIn("slow");
+			});
+
+		});
+		$("#thumb1").hover(function(){
+			$(".large").fadeOut("fast", function(){
+				$(".large").attr("src", full_gallery[1].img_path);
+				$(".large").fadeIn("slow");
+			});
+
+		});
+		$("#thumb2").hover(function(){
+			$(".large").fadeOut("fast", function(){
+				$(".large").attr("src", full_gallery[2].img_path);
+				$(".large").fadeIn("slow");
+			});
+		});
+		$("#thumb3").hover(function(){
+			$(".large").fadeOut("fast", function(){
+				$(".large").attr("src", full_gallery[3].img_path);
+				$(".large").fadeIn("slow");
+			});
+		});
+		$("#thumb4").hover(function(){
+			$(".large").fadeOut("fast", function(){
+				$(".large").attr("src", full_gallery[4].img_path);
+				$(".large").fadeIn("slow");
+			});
+		});
+		
+		//THE CLICK STUFF
+		$("#thumb0").click(function(){
+			$(".info").html("<h4>" + full_gallery[0].name + "</h4> <h2>" + full_gallery[0].price + "</h2>");
+		});
+		$("#thumb1").click(function(){
+			$(".info").html("<h4>" + full_gallery[1].name + "</h4> <h2>" + full_gallery[1].price + "</h2>");
+		});
+		$("#thumb2").click(function(){
+			$(".info").html("<h4>" + full_gallery[2].name + "</h4> <h2>" + full_gallery[2].price + "</h2>");
+		});
+		$("#thumb3").click(function(){
+			$(".info").html("<h4>" + full_gallery[3].name + "</h4> <h2>" + full_gallery[3].price + "</h2>");
+		});
+		$("#thumb4").click(function(){
+			$(".info").html("<h4>" + full_gallery[4].name + "</h4> <h2>" + full_gallery[4].price + "</h2>");
+		});
+		
+		
+		
+		
+	});
+	
+	
+</script>
+
+	
+</head>
+
+<body>
+
+<div class="container">
+	<div class="thumbnails"></div>
+	<div class="info"></div>
+</div>
+	
+<div class="lightbox"></div>
+
+	
+	
+<script language="javascript" type="text/javascript">
+
+	
+</script>
+</body>
+</html>
